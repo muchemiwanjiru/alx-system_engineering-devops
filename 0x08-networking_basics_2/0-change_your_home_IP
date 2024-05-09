@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# a bash script
+# configures an ubuntu server.
+hosts_file="/etc/hosts"
+# backup hosts file
+if ! cp "$hosts_file" "$hosts_file.bak"; then
+echo "Error: unable to backup hosts file."
+exit 1
+fi
+# adds new entries to files
+tmp_file="$(mktemp)"
+echo "127.0.0.2	localhost" > "$tmp_file"
+echo "8.8.8.8		facebook.com" >> "$tmp_file"
+# replacing original hosts file
+if ! cp -f "$tmp_file" "$hosts_file"; then
+echo "Error: could not replace hosts file."
+exit 1
+fi
+# cleaning temp file
+rm "$tmp_file"
