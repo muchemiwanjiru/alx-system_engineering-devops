@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#prints PID of current process
+echo "$$"

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# the command writes 'iam alive' in between messages
+# the condition used is a while loop
+while true
+do
+echo "I am alive!" >> /tmp/my_process
+sleep 2
+done

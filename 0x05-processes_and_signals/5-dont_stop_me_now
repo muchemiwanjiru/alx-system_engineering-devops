@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# the command kills the 4-to-infinity process
+# as soon as we find the PID
+kill "$(pgrep -f 4-to_infinity_and_beyond)"
