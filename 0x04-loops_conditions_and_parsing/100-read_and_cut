@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# the loop displays the file contents
+# contents shown are username, user id
+# reading the file line by line using while loop
+while read -r passwd; do
+# extracting the fields using cut command
+echo "$passwd" | cut -d ':' -f1,3,6
+done < "/etc/passwd" 

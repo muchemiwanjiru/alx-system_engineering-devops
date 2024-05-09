@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# the Apache log is parsed in list format
+# displaying the occurence of IP and HTTP statuses
+awk '{ print $1 " " $9}' apache-access.log | sort | uniq -c | sort -rn

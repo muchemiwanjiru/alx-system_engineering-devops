@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#lists files in current dir in a list
+for file in *; do
+    if [ -f "$file" ] && [[ "$file" != .* ]]; then
+    part_after_dash=$(echo "$file" | cut -d '-' -f 2-)
+        
+        # Display in list format
+        echo "$part_after_dash"
+    fi
+done

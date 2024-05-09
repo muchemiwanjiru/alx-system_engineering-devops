@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#displays 12hours 59minutes in a clock
+hour=0
+while [ $hour -le 12 ]
+    do
+    echo "Hour: $hour"
+    min=1
+
+    while [ $min -le 59 ]
+        do
+        echo "$min"
+        min=$((min+1))
+
+    done
+    hour=$((hour+1))
+done
