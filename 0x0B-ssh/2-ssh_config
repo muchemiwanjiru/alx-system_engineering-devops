@@ -1,0 +1,5 @@
+Host wanjiru
+      PasswordAuthentication no
+      IdentityFile ~/.ssh/school
+      HostName 34.201.174.7
+        User ubuntu
