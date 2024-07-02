@@ -1,4 +1,4 @@
-Host wanjiru
+Host Wanjiru
       PasswordAuthentication no
       IdentityFile ~/.ssh/school
       HostName 34.201.174.7
