@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# installing nginx then having a custom 404 page that contains
+# the string Ceci n'est pas une page.
+
+sudo apt-get -y update
+sudo apt-get -y install nginx
+echo 'Hello World!' | sudo tee /var/www/html/index.html
+sudo sed -i "48i\\\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;\n" /etc/nginx/sites-available/default
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
+sudo sed -i "50i\\\terror_page 404 /404.html;\n\tlocation = /var/www/html/404.html {\n\t\tinternal;\n\t}" /etc/nginx/sites-available/default
+sudo service nginx restart
+sudo service nginx reload
