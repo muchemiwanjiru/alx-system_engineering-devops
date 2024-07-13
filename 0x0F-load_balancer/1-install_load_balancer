@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# Script installs and configures HAProxy on Ubuntu to balance traffic between
+# web-01 and web-02
+
+# Update and install HAProxy
+sudo apt-get update -y && sudo apt-get install -y haproxy
+
+#!/usr/bin/env bash
+#update package list $ install HAproxy
+apt-get update
+apt-get -y install haproxy
+
+
+#Update HAproxy confirguration file to manage load using roundrobin algorithm
+echo '
+frontend kingasia
+	bind 0:80
+	default_backend web_servers
+
+backend web_servers
+	balance roundrobin
+	server 335953-web-01 54.196.29.210
+	server 335953-web-02 54.87.217.94
+' >> /etc/haproxy/haproxy.cfg
+
+# Restarting HAproxy service
+sudo service haproxy restart
