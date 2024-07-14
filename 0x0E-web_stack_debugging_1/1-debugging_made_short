@@ -1,9 +1,17 @@
 #!/usr/bin/env bash
-# script that fixes nginx port
-
-sed -i "s/8080/80/g" /etc/nginx/sites-enabled/default
+# script that configures a server Nginx must be running, and listening on port 80 of all the server’s active IPv4 IPs
+rm /etc/nginx/sites-enabled/default
+sed -i "s/8080/80/g" /etc/nginx/sites-available/default
+sed -i "s/ipv6only=on//" /etc/nginx/sites-available/default
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 service nginx restart
 kill -9 "$(cat /var/run/nginx.pid)"
+
+
+
+
+
+
 
 
 
