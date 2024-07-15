@@ -1,6 +1,14 @@
 #!/usr/bin/env bash
-# script that fixes nginx port
-apt-get - y update
-apt-get install - y nginx
-sudo service nginx start
+#nginx likes port 80
+cat/etc/nginx/sites-available/default > /etc/nginx/sites-enabled/default
+sudo service nginx restart
+rm /run/nginx.pid
+
+
+
+
+
+
+
+
 
