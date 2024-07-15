@@ -1,32 +1,6 @@
 #!/usr/bin/env bash
 # script that fixes nginx port
-
-sed -i "s/8080/80/g" /etc/nginx/sites-enabled/default
-service nginx restart
-kill -9 "$(cat /var/run/nginx.pid)"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+apt-get - y update
+apt-get install - y nginx
+sudo service nginx start
 
