@@ -1,6 +1,6 @@
-#!/bin/bash
-apt-get update
-apt-get install -y nginx
-echo "server { listen 80; listen [::]:80; location / { return 200 'Hello, World!'; } }" > /etc/nginx/sites-available/default
-service nginx start
-curl -s http://100.25.144.134:80
+#!/usr/bin/env bash
+# script that fixes nginx port
+
+sed -i "s/8080/80/g" /etc/nginx/sites-enabled/default
+service nginx restart
+kill -9 "$(cat /var/run/nginx.pid)"
