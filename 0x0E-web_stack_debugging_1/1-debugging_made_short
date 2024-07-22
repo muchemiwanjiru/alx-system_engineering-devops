@@ -1,14 +1,6 @@
-#!/usr/bin/env bash
-#nginx likes port 80
-cat/etc/nginx/sites-available/default > /etc/nginx/sites-enabled/default
-sudo service nginx restart
-rm /run/nginx.pid
-
-
-
-
-
-
-
-
-
+#!/bin/bash
+apt-get update
+apt-get install -y nginx
+echo "server { listen 80; listen [::]:80; location / { return 200 'Hello, World!'; } }" > /etc/nginx/sites-available/default
+service nginx start
+curl -s http://100.25.144.134:80
