@@ -3,4 +3,4 @@
 
 sed -i "s/8080/80/g" /etc/nginx/sites-enabled/default
 service nginx restart
-kill -9 "$(cat /var/run/nginx.pid)"
+service nginx stop
