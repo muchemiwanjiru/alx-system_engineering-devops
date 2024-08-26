@@ -1,2 +1,5 @@
 #!/bin/bash
-sort | uniq -u
+
+# Read the input, sort it, count occurrences, and filter words that appear exactly once
+cat | sort | uniq -u
+
