@@ -1,2 +1,5 @@
 #!/bin/bash
-echo $(('echo $PATH | grep -o ":/" | wc -l'+ 1)) 
+
+# Count the number of directories in the PATH
+echo $PATH | tr ':' '\n' | grep -v '^$' | wc -l
+
