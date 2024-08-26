@@ -1,2 +1,5 @@
 #!/bin/bash
-tr "A" "Z" | tr "c" "e"
+
+# Replace 'A' with 'Z' and 'c' with 'e' in the input
+sed 's/A/Z/g; s/c/e/g'
+
