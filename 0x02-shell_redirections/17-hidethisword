@@ -1,2 +1,5 @@
 #!/bin/bash
-grep -v "bin"/etc/passwd
+
+# Display all lines in /etc/passwd that do not contain the pattern "bin"
+grep -v "bin" /etc/passwd
+
